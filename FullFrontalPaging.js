@@ -33,13 +33,24 @@ if (Meteor.isClient) {
         'click input#send': function(event) {
             var form = $(event.currentTarget).parent();
             var write = form.find('#write');
-            Chats.insert({message: write.val()});
+            var message = write.val();
+
+
+            var imageUrl = findImageUrl(message);
+            if (imageUrl) {
+              $('#imagecontainer > img').attr('src', imageUrl);
+            }
+
+            Chats.insert({ message: message });
             write.val('');
+
+
             return false;
         }
     });s
 
-    function isImageUrl(url) {
-        //var regex = /^http://.+[
+    function findImageUrl(text) {
+        var imageUrlRegex = /^https?:\/\/(?:[a-z\-]+\.)+[a-z]{2,6}(?:\/[^\/#?]+)+\.(?:jpe?g|gif|png)$/i;
+        return text.match(imageUrlRegex);
     }
 }
