@@ -37,9 +37,9 @@ if (Meteor.isClient) {
             write.val('');
             return false;
         }
-    });
+    });s
 
     function isImageUrl(url) {
-        var regex = /^http://.+[
+        //var regex = /^http://.+[
     }
 }
