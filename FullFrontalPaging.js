@@ -50,7 +50,7 @@ if (Meteor.isClient) {
     });
 
     function findImageUrl(text) {
-        var imageUrlRegex = /^https?:\/\/(?:[a-z\-]+\.)+[a-z]{2,6}(?:\/[^\/#?]+)+\.(?:jpe?g|gif|png)$/i;
+        var imageUrlRegex = /https?:\/\/(?:[a-z\-]+\.)+[a-z]{2,6}(?:\/[^\/#?]+)+\.(?:jpe?g|gif|png)/i;
         return text.match(imageUrlRegex);
     }
 }
