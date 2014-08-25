@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Demo</title>
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css" />
+    <link rel="stylesheet" type="text/css" href="tjw.css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <table id="wrapper">
+      <tbody>
+        <tr>
+          <td id="imagecontainer" class="wide" rowspan="2"></td>
+          <td id="chat">
+            <div id="chatlog">
+              <ol reversed="reversed">
+                <li><span>lorem metus, mattis posuere purus laoreet vel. Nunc vel suscipit est, pretium dictum leo. Sed dolor urna, mattis vitae ligula et, dapibus eleifend felis. Ut consectetur, est eget consectetur</span></li>
+                <li><span>commodo,</span></li>
+                <li><span>justo risus posuere eros, vel egestas lorem tellus et risus.</span></li>
+                <li><span>Cras ut ullamcorper libero.</span></li>
+                <li><span>Mauris ut nisi vel odio efficitur malesuada et feugiat justo.</span></li>
+                <li><span>Duis tempor nunc sit amet pretium malesuada.</span></li>
+                <li><span>Vestibulum posuere ipsum sed sem ultrices porta.</span></li>
+                <li><span>Fusce nec est sed elit iaculis lobortis sit amet non leo.</span></li>
+                <li><span>Proin porta sapien ut posuere tempus.</span></li>
+                <li><span>Sed</span></li>
+                <li><span>ac posuere massa, ut auctor neque.</span></li>
+                <li><span>In ipsum nibh, euismod sit amet tellus quis, facilisis pulvinar turpis.</span></li>
+                <li><span>In hac habitasse platea dictumst. Donec magna</span></li>
+                <li><span>dui, egestas vel rutrum at, fringilla sit amet dui.</span></li>
+                <li><span>Quisque feugiat, turpis tristique bibendum lacinia, mauris urna commodo lorem, at congue risus sapien id mauris. Nullam condimentum ex sit amet ligula blandit, eu convallis tortor molestie. Phasellus in viverra elit. Maecenas pretium tortor augue, ut sagittis lorem auctor non. Quisque neque ligula, auctor non mi vitae, sollicitudin fringilla leo. Sed vitae ipsum nibh. Nullam blandit dapibus bibendum.</span></li>
+                <li><span>Praesent mattis, purus vitae posuere aliquet,</span></li>
+                <li><span>massa odio semper mauris, quis posuere massa elit et felis.</span></li>
+                <li><span>Nullam</span></li>
+                <li><span>id</span></li>
+                <li><span>nisi</span></li>
+                <li><span>a nunc vehicula vulputate et eget quam. Nam tempus ante lorem,</span></li>
+                <li><span>quis tempor elit luctus eget. Maecenas feugiat sapien molestie orci consectetur, quis commodo ex</span></li>
+                <li><span>porta. Pellentesque bibendum interdum eros. Sed</span></li>
+                <li><span>eget posuere eros.</span></li>
+                <li><span>Etiam consectetur porttitor vulputate.</span></li>
+                <li><span>Vestibulum vitae ullamcorper augue.</span></li>
+                <li><span>Curabitur auctor, sem efficitur molestie pretium, risus sapien sollicitudin dolor, eu eleifend metus leo id enim.</span></li>
+                <li><span>Aliquam scelerisque posuere diam, eget finibus</span></li>
+                <li><span>lorem commodo sed. Aenean pharetra tristique magna</span></li>
+                <li><span>ac blandit. In hac habitasse platea dictumst.</span></li>
+                <li><span>In vehicula blandit neque, quis condimentum enim elementum sed.</span></li>
+                <li><span>Aenean condimentum vestibulum</span></li>
+                <li><span>ante</span></li>
+                <li><span>nec vehicula. Praesent</span></li>
+                <li><span>faucibus, magna et finibus dapibus, ante</span></li>
+                <li><span>risus finibus lorem, vitae laoreet ipsum eros eu lacus. Curabitur ultricies dui dui,</span></li>
+                <li><span>quis hendrerit eros semper nec. Vestibulum sit amet porta nunc. Vivamus scelerisque imperdiet malesuada. Quisque et molestie risus.</span></li>
+                <li><span>Cras in laoreet dui, id posuere ex. Donec sagittis laoreet dolor ut vestibulum.</span></li>
+                <li><span>Sed leo libero, blandit vitae ligula a, condimentum sagittis nisl.</span></li>
+                <li><span>Proin ac libero quis sapien vestibulum bibendum vel at massa.</span></li>
+                <li><span>Praesent sit amet venenatis lorem.</span></li>
+                <li><span>Proin enim tortor, lobortis id elementum sed, sagittis id ante.</span></li>
+                <li><span>Vestibulum a ante sed justo mattis viverra. Sed vitae neque ultrices,</span></li>
+                <li><span><a target="_blank" href="http://i.imgur.com/h10VLU5.jpg">http://i.imgur.com/h10VLU5.jpg</a></span></li>
+                <li><span>dignissim nulla euismod, vestibulum ligula.</span></li>
+                <li><span>Etiam sit amet nisi</span></li>
+                <li><span>a metus rhoncus euismod sed</span></li>
+                <li><span>hendrerit nulla. Duis id</span></li>
+                <li><span>felis et quam venenatis rhoncus.</span></li>
+                <li><span><a target="_blank" href="http://i.imgur.com/NDfV6yt.jpg">http://i.imgur.com/NDfV6yt.jpg</a></span></li>
+              </ol>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td id="message">
+            <form>
+              <textarea id="write"></textarea>
+              <input id="send" type="submit" value="Send" />
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <script type="text/javascript">
+      //Toggles image size between tall and wide view onclick
+      $( "#imagecontainer" ).click(function() {
+        $( this ).toggleClass( "wide" );
+      });
+      //Shows bottom of chatlog on page load.
+      $(document).ready( function() {
+        $('#chatlog')[0].scrollTop = $('#chatlog')[0].scrollHeight;
+      });
+    </script>
+  </body>
+</html>
