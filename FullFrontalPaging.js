@@ -37,13 +37,13 @@ if (Meteor.isClient) {
 
             Chats.insert({ message: message });
 
-            
+
             var imageUrl = findImageUrl(message);
             if (imageUrl) {
               $('#imagecontainer > img').attr('src', imageUrl);
             }
 
-            
+
             write.val('')
 
 
