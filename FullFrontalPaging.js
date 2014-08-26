@@ -1,31 +1,9 @@
-/*
-if (Meteor.isClient) {
-  Template.hello.greeting = function () {
-    return "Welcome to FullFrontalPaging.";
-  };
-
-  Template.hello.events({
-    'click input': function () {
-      // template data, if any, is available in 'this'
-      if (typeof console !== 'undefined')
-        console.log("You pressed the button");
-    }
-  });
-}
-*/
-
-
 var IMAGE_URL_REGEX = /https?:\/\/(?:[a-z\-]+\.)+[a-z]{2,6}(?:\/[^\/#?]+)+\.(?:jpe?g|gif|png)/i;
 
 Chats = new Meteor.Collection("chats");
 
 
-
-
-
 if (Meteor.isClient) {
-
-
 
   Template.chats.chats = function () {
     return Chats.find();
@@ -35,23 +13,25 @@ if (Meteor.isClient) {
     return Session.get("currentImageUrl")
   }
 
+  Template.chatinput.events({
+    'keydown textarea#write' : function(event) {
+      if (event.which == 13) {
+        var write = $(event.currentTarget);
+        var message = write.val();
+        processNewChatMessage(message);
+        write.val('');
+        event.preventDefault();
+      }
+    }
+  });
+
   Template.chatsubmit.events({
     'click input#send': function(event) {
-      var form = $(event.currentTarget).closest("form");
-      var write = form.find('#write');
+      var write = $(event.currentTarget).closest("form").find('#write');
       var message = write.val();
-
-      Chats.insert({ message: message });
-
-      var imageUrl = findImageUrl(message);
-      if (imageUrl) {
-        Session.set("currentImageUrl", imageUrl);
-          //$('#imagecontainer > img').css("backgroundImage", "url('" + imageUrl + "');");
-      }
-
+      processNewChatMessage(message);
       write.val('')
-
-      return false;
+      event.preventDefault();
     }
   });
 
@@ -63,6 +43,15 @@ if (Meteor.isClient) {
     });
     return text;
   });
+
+  function processNewChatMessage(message) {
+    Chats.insert({ message: message });
+
+    var imageUrl = findImageUrl(message);
+    if (imageUrl) {
+      Session.set("currentImageUrl", imageUrl);
+    }
+  }
 
   function surroundWithAnchor(text, url) {
     return text.replace(url, "<a href='" + url + "'>" + url + "</a>");
