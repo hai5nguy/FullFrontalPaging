@@ -1,4 +1,4 @@
-var IMAGE_URL_REGEX = /https?:\/\/(?:[a-z\-]+\.)+[a-z]{2,6}(?:\/[^\/#?]+)+\.(?:jpe?g|gif|png)/i;
+var IMAGE_URL_REGEX = /https?:\/\/\S+(?<=\/)(\S+\.)(jpe?g|gif|png)/i;
 
 Chats = new Meteor.Collection("chats");
 
