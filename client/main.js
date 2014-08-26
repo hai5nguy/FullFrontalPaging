@@ -20,5 +20,5 @@ $('#dragbar').mousedown(function(resizeChat){
 });
 $(document).mouseup(function(resizeChat){
   $(document).unbind('mousemove');
-  chatBottom(); //fix later
+  //chatBottom(); //fix later
 });
