@@ -32,7 +32,7 @@ if (Meteor.isClient) {
   }
 
   Template.image.url = function() {
-    return "http://placehold.it/350x450"
+    return Session.get("currentImageUrl")
   }
 
   Template.chatsubmit.events({
@@ -45,7 +45,8 @@ if (Meteor.isClient) {
 
       var imageUrl = findImageUrl(message);
       if (imageUrl) {
-        $('#imagecontainer > img').attr('src', imageUrl);
+        Session.set("currentImageUrl", imageUrl);
+          //$('#imagecontainer > img').css("backgroundImage", "url('" + imageUrl + "');");
       }
 
       write.val('')

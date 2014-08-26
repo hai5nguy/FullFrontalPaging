@@ -1,3 +1,8 @@
 body {
     background: #808080;
 }
+
+#imagecontainer > img {
+	width: 300px;
+	height: 300px;
+}
