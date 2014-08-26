@@ -344,6 +344,10 @@ form {
   padding: 6px 9px;
   vertical-align: bottom;
   color: #999999;
+  overflow: auto;
+  max-width: 700px;
+  width: 100%;
+  list-style: none;
 }
 #chatlog li span {
   color: #e0e0e0;
