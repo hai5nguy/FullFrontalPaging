@@ -1,39 +1,54 @@
-<head>
-  <title>FullFrontalPaging</title>
-</head>
+  <head>
+    <title>FullFrontalPaging</title>
+  </head>
 
-<body>
-    <div id="imagecontainer">
-        {{> image}}
-    </div>
-    <div id="chatcontainer">
-        {{> chats}}
-    </div>
+  <body>
+    <table id="wrapper">
+      <tbody>
+        <tr>
+          <td id="imagecontainer" class="wide" rowspan="2">
+            {{> image}}
+          </td>
+          <td id="dragbar" rowspan="2"></td>
+          <td id="chat" colspan="2">
+            <div id="chatlog">
+              <ol reversed="reversed">
+                {{> chats}}
+              </ol>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <form>
+            <td id="message">
+              {{> chatinput}}
+            </td>
+            <td id="submitbutton">
+              {{> chatsubmit}}
+            </td>
+          </form>
+        </tr>
+      </tbody>
+    </table>
+    <link type="text/css" href=".sass/style.scss" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+  </body>
 
-    {{> chatinput}}
+  <template name="chats">
+    {{#each chats}}
+      <li><span>{{message}}</span></li>
+    {{/each}}
+  </template>
 
-</body>
-
-<template name="chats">
-        {{#each chats}}
-            <span>{{message}}</span>
-        {{/each}}
-</template>
-
-        <!--
-<template name="chats">
-        <input type="text" value="enter text here" />
-</template>
-        -->
-
-
-<template name="image">
+  <template name="image">
     <img src="{{url}}" />
-</template>
+  </template>
 
-<template name="chatinput">
-    <form>
-        <textarea id="write"></textarea>
-        <input id="send" type="submit" value="Send" />
-    </form>
-</template>
+  <template name="chatinput">
+    <textarea id="write"></textarea>
+  </template>
+
+  <template name="chatsubmit">
+      <input id="send" type="submit" value="Send" />
+  </template>
