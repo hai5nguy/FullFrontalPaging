@@ -285,6 +285,14 @@ body {
   vertical-align: middle;
 }
 
+form {
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+}
+
 #imagecontainer {
   background: #333333;
   background-image: url("http://i.imgur.com/h10VLU5.jpg");
@@ -328,10 +336,11 @@ body {
   width: 100%;
   height: 100%;
   overflow: auto;
+  vertical-align: bottom;
 }
 #chatlog li {
   border-radius: 4px 0px 0px 4px;
-  margin: 0px;
+  margin: 0px 0px 0px 35px;
   padding: 6px 9px;
   vertical-align: bottom;
   color: #999999;
@@ -359,6 +368,7 @@ body {
   text-align: left;
   font-size: 0px;
   vertical-align: top;
+  word-break: break-word;
 }
 
 #submitbutton {

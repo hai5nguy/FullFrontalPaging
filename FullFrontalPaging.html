@@ -1,38 +1,35 @@
 <head>
   <title>FullFrontalPaging</title>
+  <link type="text/css" href="sass/style.css" />
 </head>
 
 <body>
-  <table id="wrapper">
-    <tbody>
-      <tr>
-        <td id="imagecontainer" class="wide" rowspan="2">
+  <form>
+    <table id="wrapper">
+      <tbody>
+        <tr>
           {{> image}}
-        </td>
-        <td id="dragbar" rowspan="2"></td>
-        <td id="chat" colspan="2">
-          <div id="chatlog">
-            <ol reversed="reversed">
-              {{> chats}}
-            </ol>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <form>
+          <td id="dragbar" rowspan="2"></td>
+          <td id="chat" colspan="2">
+            <div id="chatlog">
+              <ol reversed="reversed">
+                {{> chats}}
+              </ol>
+            </div>
+          </td>
+        </tr>
+        <tr>
           <td id="message">
             {{> chatinput}}
           </td>
           <td id="submitbutton">
             {{> chatsubmit}}
           </td>
-        </form>
-      </tr>
-
-    </tbody>
-  </table>
-  <link type="text/css" href="sass/style.css" />
-  <script type="text/javascript" src="main.js"></script>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+  <script type="text/javascript" src="scripts/main.js"></script>
 </body>
 
 <template name="chats">
@@ -42,11 +39,11 @@
 </template>
 
 <template name="image">
-  <img style="background-image: url('{{url}}');"/>
+  <td id="imagecontainer" class="wide" rowspan="2" style="background-image:url(''{{url}}'');"></td>
 </template>
 
 <template name="chatinput">
-  <textarea id="write"></textarea>
+  <input id="write" type="text" />
 </template>
 
 <template name="chatsubmit">
