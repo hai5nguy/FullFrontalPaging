@@ -11,7 +11,8 @@
       <tbody>
         <tr>
           <td id="imagecontainer" class="wide" rowspan="2"></td>
-          <td id="chat">
+          <td id="dragbar" rowspan="2"></td>
+          <td id="chat" colspan="2">
             <div id="chatlog">
               <ol reversed="reversed">
                 <li><span>lorem metus, mattis posuere purus laoreet vel. Nunc vel suscipit est, pretium dictum leo. Sed dolor urna, mattis vitae ligula et, dapibus eleifend felis. Ut consectetur, est eget consectetur</span></li>
@@ -70,10 +71,10 @@
         </tr>
         <tr>
           <td id="message">
-            <form>
-              <textarea id="write"></textarea>
-              <input id="send" type="submit" value="Send" />
-            </form>
+            <textarea id="write"></textarea>
+          </td>
+          <td id="submitbutton">
+            <input id="send" type="submit" value="Send" />
           </td>
         </tr>
       </tbody>
@@ -84,8 +85,21 @@
         $( this ).toggleClass( "wide" );
       });
       //Shows bottom of chatlog on page load.
-      $(document).ready( function() {
+      $(document).ready( function chatBottom() {
         $('#chatlog')[0].scrollTop = $('#chatlog')[0].scrollHeight;
+      });
+      //Dragbar resizes chat from http://jsfiddle.net/gaby/Bek9L
+      $('#dragbar').mousedown(function(resizeChat){
+        resizeChat.preventDefault();
+        $(document).mousemove(function(resizeChat){
+          $('#imagecontainer').css("width",resizeChat.pageX+2);
+          $('#dragbar').css("left",resizeChat.pageX+2);
+          $('#chatlog').css("left",resizeChat.pageX+2);
+        })
+      });
+      $(document).mouseup(function(resizeChat){
+        $(document).unbind('mousemove');
+        chatBottom();
       });
     </script>
   </body>
