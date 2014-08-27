@@ -1,0 +1,118 @@
+
+//Main custom styles used on every page of the site
+
+html,
+body
+    height: 100%
+    width: 100%
+    border: 0px
+    margin: 0px
+    padding: 0px
+    color: #E0E0E0
+    overflow: hidden
+
+#wrapper
+    width: 100%
+    height: 100%
+    border: 0px
+    margin: 0px
+    padding: 0px
+    text-align: center
+    vertical-align: middle
+
+form
+    +bmp0
+    width: 100%
+    height: 100%
+
+#imagecontainer
+    background: #333
+    //background-image: url('http://i.imgur.com/NDfV6yt.jpg');
+    background-image: url('http://i.imgur.com/h10VLU5.jpg')
+    background-position: center center
+    background-repeat: no-repeat
+    background-size: auto 100%
+    width: 100%
+    height: 100%
+    text-align: center
+    vertical-align: middle
+
+.wide
+    background-size: 100% auto !important
+
+#dragbar
+    background-color: #666
+    background-image: url('img/handle-v.png')
+    background-position: 2px 50%
+    background-repeat: no-repeat
+    height: 100%
+    width: 7px
+    min-width: 7px
+    max-width: 7px
+    border: 0px
+    margin: 0px
+    padding: 0px
+    cursor: col-resize
+
+#chat
+    min-width: 350px
+    height: 100%
+    background-color: #444
+    text-align: left
+    vertical-align: bottom
+
+#chatlog
+    width: 100%
+    height: 100%
+    overflow: auto
+    vertical-align: bottom
+    li
+        border-radius: 4px 0px 0px 4px
+        margin: 0px 0px 0px 9px
+        padding: 6px 9px
+        vertical-align: bottom
+        color: #999
+        overflow: auto
+        max-width: 700px
+        width: auto
+        list-style: none
+        span
+            color: #E0E0E0
+        &:nth-of-type(even)
+            background-color: #666
+            span
+                color: #F0F0F0
+    a
+        color: #9BBDF0
+        text-decoration: none
+        &:hover
+            text-decoration: underline
+
+#message
+    height: 60px
+    overflow: none
+    text-align: left
+    font-size: 0px
+    vertical-align: top
+    word-break: break-word
+
+#submitbutton
+    width: 75px
+
+#write,
+#send
+    border: 0px
+    margin: 0px
+    padding: 0px
+    height: 60px
+    font-size: 15px
+    vertical-align: top
+
+#write
+    width: 100%
+    background-color: #999
+
+#send
+    width: 75px
+    background-color: #777
+    color: #EEE
