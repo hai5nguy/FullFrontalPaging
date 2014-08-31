@@ -34,15 +34,11 @@
   {{#each chats}}
       {{> chatmessage}}
   {{/each}}
-  {{> blah}}
-</template>
-
-<template name="blah">
 </template>
 
 <template name="chatmessage">
     <p>
-      <time>11:59 am<!-- {{timestamp}} --></time>
+      <time>{{formatTimestamp timestamp}}</time>
       <span>{{{embedUrl message}}}</span>
     </p>
 </template>

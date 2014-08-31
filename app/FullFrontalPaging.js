@@ -43,7 +43,7 @@ if (Meteor.isClient) {
   }
 
   Template.chats.rendered = function() {
-    console.log("chats rendered");
+    // console.log("chats rendered");
     scrollToBottom();
   }
 
@@ -84,6 +84,24 @@ if (Meteor.isClient) {
     }
   });
 
+  UI.registerHelper("formatTimestamp", function(isoDateTime) {
+    var d = new Date(isoDateTime);
+    var hh = d.getHours();
+    var m = d.getMinutes();
+    var dd = "AM";
+    var h = hh;
+    if (h >= 12) {
+        h = hh-12;
+        dd = "PM";
+    }
+    if (h == 0) {
+        h = 12;
+    }
+    m = m<10?"0"+m:m;
+
+    return h + ":" + m + " " + dd;
+  });
+
   UI.registerHelper("embedUrl", function(text) {
     var matches = text.match(IMAGE_URL_REGEX);
     if (!matches) return text;
@@ -93,16 +111,8 @@ if (Meteor.isClient) {
     return text;
   });
 
-  Template.blah.rendered = function() {
-    console.log("blah rendered");
-  }
-
-  // UI.registerHelper("doneLoadingChats", function() {
-  //   console.log("doneloadingchats");
-  // });
-
   function processNewChatMessage(message) {
-    Chats.insert({ message: message });
+    Meteor.call("insertChat", message);
 
     var imageUrl = findImageUrl(message);
     if (imageUrl) {
