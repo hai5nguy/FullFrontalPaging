@@ -340,7 +340,7 @@ form {
 #chatlog p {
   border-radius: 4px 0px 0px 4px;
   margin: 0px 0px 0px 9px;
-  padding: 6px 9px;
+  padding: 6px 3px 6px 9px;
   vertical-align: bottom;
   color: #E0E0E0;
   overflow: auto;
@@ -351,6 +351,17 @@ form {
 #chatlog p:nth-of-type(even) {
   background-color: #666;
   color: #F0F0F0;
+}
+#chatlog p:nth-of-type(even) time {
+  color: #9D9D9D;
+}
+#chatlog p:last-of-type {
+  margin-bottom: 6px;
+}
+#chatlog p time {
+  font-size: 10px;
+  float: right;
+  color: #818181;
 }
 #chatlog a {
   color: #9BBDF0;

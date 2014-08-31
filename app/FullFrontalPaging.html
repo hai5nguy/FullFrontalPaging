@@ -32,7 +32,10 @@
 
 <template name="chats">
   {{#each chats}}
-    <p>{{{embedUrl message}}}</p>
+    <p>
+      <time>11:59 am<!-- {{timestamp}} --></time>
+      <span>{{{embedUrl message}}}</span>
+    </p>
   {{/each}}
 </template>
 
