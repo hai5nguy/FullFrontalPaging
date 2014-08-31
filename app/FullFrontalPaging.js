@@ -4,9 +4,64 @@ Chats = new Meteor.Collection("chats");
 
 
 if (Meteor.isClient) {
+  Meteor.subscribe("allChats");
 
   Template.chats.chats = function () {
     return Chats.find();
+  }
+
+  Chats.find().observe({
+    added: function(a,b,c) {
+      //console.log("added");
+      //console.log("a: " + JSON.stringify(a));
+      //console.log("b: " + b);
+      //console.log("c: " + c);
+
+      if (isAtBottomOfChatWindow()) {
+        console.log("bottom");
+        scrollToBottom();
+      }
+
+      //console.log(isAtBottomOfChatWindow());
+    }
+  });
+
+  function isAtBottomOfChatWindow() {
+    var chatlog = $('#chatlog');
+    var heightOfChatlog = chatlog.height();
+    var heightOfChatContent = chatlog[0].scrollHeight;
+    var topOfChatContent = chatlog[0].scrollTop;
+
+    // console.log("heightOfChatlog: " + heightOfChatlog);
+    // console.log("heightOfChatContent: " + heightOfChatContent);
+    // console.log("topOfChatContent: " + topOfChatContent);
+
+    return (heightOfChatContent - heightOfChatlog <= topOfChatContent)
+  }
+
+  function scrollToBottom() {
+      console.log("yo");
+      setTimeout(function() {
+
+
+      $('#chatlog')[0].scrollTop = $('#chatlog')[0].scrollHeight;
+      }, 5000);
+
+  }
+  /*
+  Template.chats.rendered = function() {
+   if(!this._rendered) {
+      this._rendered = true;
+      alert('Template onLoad');
+    }
+
+  }
+  */
+  Template.chats.doneLoadingChats = function() {
+    Meteor.defer(function() {
+
+    });
+
   }
 
   Template.image.url = function() {
