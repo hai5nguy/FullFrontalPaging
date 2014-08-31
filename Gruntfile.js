@@ -15,17 +15,17 @@ module.exports = function(grunt) {
 		},
 		sass: {
 			options: {
-				sourceComments: 'normal',
-				outputStyle: 'expanded'
+				style: 'expanded',
+				sourcemap: 'none'
 			},
 			dist: {
 				files: {
-					'app/client/css/style.css': 'app/client/sass/style.sass'
+					'app/client/css/style.css': 'app/client/sass/style.scss'
 				}
 			}
 		}
 	});
 	grunt.registerTask('default', ['sass:dist', 'watch']);
-	grunt.loadNpmTasks('grunt-sass');
+	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 };

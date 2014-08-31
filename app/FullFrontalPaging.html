@@ -12,9 +12,7 @@
           <td id="dragbar" rowspan="2"></td>
           <td id="chat" colspan="2">
             <div id="chatlog">
-              <ol reversed="reversed">
-                {{> chats}}
-              </ol>
+              {{> chats}}
             </div>
           </td>
         </tr>
@@ -34,7 +32,7 @@
 
 <template name="chats">
   {{#each chats}}
-    <li><span>{{{embedUrl message}}}</span></li>
+    <p>{{{embedUrl message}}}</p>
   {{/each}}
 </template>
 

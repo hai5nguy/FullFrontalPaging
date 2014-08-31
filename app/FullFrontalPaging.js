@@ -96,8 +96,6 @@ if (Meteor.isClient) {
       //chatBottom(); //fix laters
     });
 
-    alert("yo");
-
   });
 
 }
