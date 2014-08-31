@@ -1,0 +1,5 @@
+Full Frontal Paging To Do list
+
+Correct Anchor tags
+only show 50 comments
+re-do markup to use JS for image resize and chatlog width/drag
