@@ -8,6 +8,10 @@
 //Stuff that effects every page
 @import "_main.sass";         // Main CSS for the site
 
+//Vendors and Plugins
+@import "_owl-carousel.sass"; // Core CSS for Owl-Carousel
+@import "_owl-theme.sass";    // Skin for Owl-Carousel
+
 //Stuff that goes at the end
 @import "_mediaqueries.sass"; // Adjusts the CSS of elements depending on browser or device resolution. Adaptive Web Design.
 @import "_crossbrowser.sass"; // CSS to correct issues that only occur in specific environments
