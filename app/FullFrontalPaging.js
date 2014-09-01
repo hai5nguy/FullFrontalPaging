@@ -55,19 +55,21 @@ if (Meteor.isClient) {
     }
   }
 
-  //5941 Westbury North Dr, Apt D
   Template.image.url = function() {
+    console.log(Session.get("currentImageUrl"));
     return Session.get("currentImageUrl")
   }
 
   Template.chatinput.events({
     'keydown textarea#write' : function(event) {
       if (event.which == 13) {
-        scrollToBottom();
         var write = $(event.currentTarget);
         var message = write.val();
-        processNewChatMessage(message);
-        write.val('');
+        if (message != '') {
+          scrollToBottom();
+          processNewChatMessage(message);
+          write.val('');
+        }
         event.preventDefault();
       }
     }
@@ -78,8 +80,10 @@ if (Meteor.isClient) {
       scrollToBottom();
       var write = $(event.currentTarget).closest("form").find('#write');
       var message = write.val();
-      processNewChatMessage(message);
-      write.val('')
+      if (message != '') {
+        processNewChatMessage(message);
+        write.val('')
+      }
       event.preventDefault();
     }
   });
@@ -105,9 +109,9 @@ if (Meteor.isClient) {
   UI.registerHelper("embedUrl", function(text) {
     var matches = text.match(IMAGE_URL_REGEX);
     if (!matches) return text;
-    matches.forEach(function(match, i) {
-      text = surroundWithAnchor(text, match);
-    });
+    // matches.forEach(function(match, i) {
+      text = surroundWithAnchor(text, matches[0]);
+    // });
     return text;
   });
 
@@ -121,7 +125,7 @@ if (Meteor.isClient) {
   }
 
   function surroundWithAnchor(text, url) {
-    return text.replace(url, "<a href='" + url + "'>" + url + "</a>");
+    return text.replace(url, "<a href='" + url + "' target='_blank'>" + url + "</a>");
   }
 
   function findImageUrl(text) {
