@@ -350,7 +350,7 @@ form {
   list-style: none;
 }
 #chatlog p:nth-of-type(even) {
-  background-color: #666;
+  background-color: #4F4F4F;
   color: #F0F0F0;
 }
 #chatlog p:nth-of-type(even) time {
@@ -363,6 +363,10 @@ form {
   font-size: 10px;
   float: right;
   color: #818181;
+}
+#chatlog p span:last-of-type {
+  display: block;
+  padding: 5px 0px 0px 0px;
 }
 #chatlog a {
   color: #9BBDF0;
