@@ -63,11 +63,13 @@ if (Meteor.isClient) {
   Template.chatinput.events({
     'keydown textarea#write' : function(event) {
       if (event.which == 13) {
-        scrollToBottom();
         var write = $(event.currentTarget);
         var message = write.val();
-        processNewChatMessage(message);
-        write.val('');
+        if (message != '') {
+          scrollToBottom();
+          processNewChatMessage(message);
+          write.val('');
+        }
         event.preventDefault();
       }
     }
@@ -78,8 +80,10 @@ if (Meteor.isClient) {
       scrollToBottom();
       var write = $(event.currentTarget).closest("form").find('#write');
       var message = write.val();
-      processNewChatMessage(message);
-      write.val('')
+      if (message != '') {
+        processNewChatMessage(message);
+        write.val('')
+      }
       event.preventDefault();
     }
   });
