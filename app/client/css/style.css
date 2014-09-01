@@ -408,6 +408,655 @@ form {
   color: #EEE;
 }
 
+.icon {
+  background-image: url("../_img/icons/spritesheet.png");
+  display: inline-block;
+  float: left;
+  height: 24px;
+  margin: 0px 6px 0px 0px;
+  width: 24px;
+}
+
+.bat-white {
+  background-position: 0px     0px;
+}
+
+.bat-red {
+  background-position: -24px     0px;
+}
+
+.bat-orange {
+  background-position: -48px     0px;
+}
+
+.bat-yellow {
+  background-position: -72px     0px;
+}
+
+.bat-green {
+  background-position: -96px     0px;
+}
+
+.bat-blue {
+  background-position: -120px     0px;
+}
+
+.bat-purple {
+  background-position: -144px     0px;
+}
+
+.bat-pink {
+  background-position: -168px     0px;
+}
+
+.bear-white {
+  background-position: 0px   -24px;
+}
+
+.bear-red {
+  background-position: -24px   -24px;
+}
+
+.bear-orange {
+  background-position: -48px   -24px;
+}
+
+.bear-yellow {
+  background-position: -72px   -24px;
+}
+
+.bear-green {
+  background-position: -96px   -24px;
+}
+
+.bear-blue {
+  background-position: -120px   -24px;
+}
+
+.bear-purple {
+  background-position: -144px   -24px;
+}
+
+.bear-pink {
+  background-position: -168px   -24px;
+}
+
+.bee-white {
+  background-position: 0px   -48px;
+}
+
+.bee-red {
+  background-position: -24px   -48px;
+}
+
+.bee-orange {
+  background-position: -48px   -48px;
+}
+
+.bee-yellow {
+  background-position: -72px   -48px;
+}
+
+.bee-green {
+  background-position: -96px   -48px;
+}
+
+.bee-blue {
+  background-position: -120px   -48px;
+}
+
+.bee-purple {
+  background-position: -144px   -48px;
+}
+
+.bee-pink {
+  background-position: -168px   -48px;
+}
+
+.cat-white {
+  background-position: 0px   -72px;
+}
+
+.cat-red {
+  background-position: -24px   -72px;
+}
+
+.cat-orange {
+  background-position: -48px   -72px;
+}
+
+.cat-yellow {
+  background-position: -72px   -72px;
+}
+
+.cat-green {
+  background-position: -96px   -72px;
+}
+
+.cat-blue {
+  background-position: -120px   -72px;
+}
+
+.cat-purple {
+  background-position: -144px   -72px;
+}
+
+.cat-pink {
+  background-position: -168px   -72px;
+}
+
+.cat_eyes-white {
+  background-position: 0px   -96px;
+}
+
+.cat_eyes-red {
+  background-position: -24px   -96px;
+}
+
+.cat_eyes-orange {
+  background-position: -48px   -96px;
+}
+
+.cat_eyes-yellow {
+  background-position: -72px   -96px;
+}
+
+.cat_eyes-green {
+  background-position: -96px   -96px;
+}
+
+.cat_eyes-blue {
+  background-position: -120px   -96px;
+}
+
+.cat_eyes-purple {
+  background-position: -144px   -96px;
+}
+
+.cat_eyes-pink {
+  background-position: -168px   -96px;
+}
+
+.cat_face-white {
+  background-position: 0px  -120px;
+}
+
+.cat_face-red {
+  background-position: -24px  -120px;
+}
+
+.cat_face-orange {
+  background-position: -48px  -120px;
+}
+
+.cat_face-yellow {
+  background-position: -72px  -120px;
+}
+
+.cat_face-green {
+  background-position: -96px  -120px;
+}
+
+.cat_face-blue {
+  background-position: -120px  -120px;
+}
+
+.cat_face-purple {
+  background-position: -144px  -120px;
+}
+
+.cat_face-pink {
+  background-position: -168px  -120px;
+}
+
+.cat_walk-white {
+  background-position: 0px  -144px;
+}
+
+.cat_walk-red {
+  background-position: -24px  -144px;
+}
+
+.cat_walk-orange {
+  background-position: -48px  -144px;
+}
+
+.cat_walk-yellow {
+  background-position: -72px  -144px;
+}
+
+.cat_walk-green {
+  background-position: -96px  -144px;
+}
+
+.cat_walk-blue {
+  background-position: -120px  -144px;
+}
+
+.cat_walk-purple {
+  background-position: -144px  -144px;
+}
+
+.cat_walk-pink {
+  background-position: -168px  -144px;
+}
+
+.cat_wink-white {
+  background-position: 0px  -168px;
+}
+
+.cat_wink-red {
+  background-position: -24px  -168px;
+}
+
+.cat_wink-orange {
+  background-position: -48px  -168px;
+}
+
+.cat_wink-yellow {
+  background-position: -72px  -168px;
+}
+
+.cat_wink-green {
+  background-position: -96px  -168px;
+}
+
+.cat_wink-blue {
+  background-position: -120px  -168px;
+}
+
+.cat_wink-purple {
+  background-position: -144px  -168px;
+}
+
+.cat_wink-pink {
+  background-position: -168px  -168px;
+}
+
+.cow-white {
+  background-position: 0px  -192px;
+}
+
+.cow-red {
+  background-position: -24px  -192px;
+}
+
+.cow-orange {
+  background-position: -48px  -192px;
+}
+
+.cow-yellow {
+  background-position: -72px  -192px;
+}
+
+.cow-green {
+  background-position: -96px  -192px;
+}
+
+.cow-blue {
+  background-position: -120px  -192px;
+}
+
+.cow-purple {
+  background-position: -144px  -192px;
+}
+
+.cow-pink {
+  background-position: -168px  -192px;
+}
+
+.crow-white {
+  background-position: 0px  -216px;
+}
+
+.crow-red {
+  background-position: -24px  -216px;
+}
+
+.crow-orange {
+  background-position: -48px  -216px;
+}
+
+.crow-yellow {
+  background-position: -72px  -216px;
+}
+
+.crow-green {
+  background-position: -96px  -216px;
+}
+
+.crow-blue {
+  background-position: -120px  -216px;
+}
+
+.crow-purple {
+  background-position: -144px  -216px;
+}
+
+.crow-pink {
+  background-position: -168px  -216px;
+}
+
+.dog-white {
+  background-position: 0px  -240px;
+}
+
+.dog-red {
+  background-position: -24px  -240px;
+}
+
+.dog-orange {
+  background-position: -48px  -240px;
+}
+
+.dog-yellow {
+  background-position: -72px  -240px;
+}
+
+.dog-green {
+  background-position: -96px  -240px;
+}
+
+.dog-blue {
+  background-position: -120px  -240px;
+}
+
+.dog-purple {
+  background-position: -144px  -240px;
+}
+
+.dog-pink {
+  background-position: -168px  -240px;
+}
+
+.dragon-white {
+  background-position: 0px  -264px;
+}
+
+.dragon-red {
+  background-position: -24px  -264px;
+}
+
+.dragon-orange {
+  background-position: -48px  -264px;
+}
+
+.dragon-yellow {
+  background-position: -72px  -264px;
+}
+
+.dragon-green {
+  background-position: -96px  -264px;
+}
+
+.dragon-blue {
+  background-position: -120px  -264px;
+}
+
+.dragon-purple {
+  background-position: -144px  -264px;
+}
+
+.dragon-pink {
+  background-position: -168px  -264px;
+}
+
+.duck-white {
+  background-position: 0px  -288px;
+}
+
+.duck-red {
+  background-position: -24px  -288px;
+}
+
+.duck-orange {
+  background-position: -48px  -288px;
+}
+
+.duck-yellow {
+  background-position: -72px  -288px;
+}
+
+.duck-green {
+  background-position: -96px  -288px;
+}
+
+.duck-blue {
+  background-position: -120px  -288px;
+}
+
+.duck-purple {
+  background-position: -144px  -288px;
+}
+
+.duck-pink {
+  background-position: -168px  -288px;
+}
+
+.elephant-white {
+  background-position: 0px  -312px;
+}
+
+.elephant-red {
+  background-position: -24px  -312px;
+}
+
+.elephant-orange {
+  background-position: -48px  -312px;
+}
+
+.elephant-yellow {
+  background-position: -72px  -312px;
+}
+
+.elephant-green {
+  background-position: -96px  -312px;
+}
+
+.elephant-blue {
+  background-position: -120px  -312px;
+}
+
+.elephant-purple {
+  background-position: -144px  -312px;
+}
+
+.elephant-pink {
+  background-position: -168px  -312px;
+}
+
+.kiwi-white {
+  background-position: 0px  -336px;
+}
+
+.kiwi-red {
+  background-position: -24px  -336px;
+}
+
+.kiwi-orange {
+  background-position: -48px  -336px;
+}
+
+.kiwi-yellow {
+  background-position: -72px  -336px;
+}
+
+.kiwi-green {
+  background-position: -96px  -336px;
+}
+
+.kiwi-blue {
+  background-position: -120px  -336px;
+}
+
+.kiwi-purple {
+  background-position: -144px  -336px;
+}
+
+.kiwi-pink {
+  background-position: -168px  -336px;
+}
+
+.octopus-white {
+  background-position: 0px  -360px;
+}
+
+.octopus-red {
+  background-position: -24px  -360px;
+}
+
+.octopus-orange {
+  background-position: -48px  -360px;
+}
+
+.octopus-yellow {
+  background-position: -72px  -360px;
+}
+
+.octopus-green {
+  background-position: -96px  -360px;
+}
+
+.octopus-blue {
+  background-position: -120px  -360px;
+}
+
+.octopus-purple {
+  background-position: -144px  -360px;
+}
+
+.octopus-pink {
+  background-position: -168px  -360px;
+}
+
+.rabbit-white {
+  background-position: 0px  -384px;
+}
+
+.rabbit-red {
+  background-position: -24px  -384px;
+}
+
+.rabbit-orange {
+  background-position: -48px  -384px;
+}
+
+.rabbit-yellow {
+  background-position: -72px  -384px;
+}
+
+.rabbit-green {
+  background-position: -96px  -384px;
+}
+
+.rabbit-blue {
+  background-position: -120px  -384px;
+}
+
+.rabbit-purple {
+  background-position: -144px  -384px;
+}
+
+.rabbit-pink {
+  background-position: -168px  -384px;
+}
+
+.shark-white {
+  background-position: 0px  -408px;
+}
+
+.shark-red {
+  background-position: -24px  -408px;
+}
+
+.shark-orange {
+  background-position: -48px  -408px;
+}
+
+.shark-yellow {
+  background-position: -72px  -408px;
+}
+
+.shark-green {
+  background-position: -96px  -408px;
+}
+
+.shark-blue {
+  background-position: -120px  -408px;
+}
+
+.shark-purple {
+  background-position: -144px  -408px;
+}
+
+.shark-pink {
+  background-position: -168px  -408px;
+}
+
+.sloth-white {
+  background-position: 0px  -432px;
+}
+
+.sloth-red {
+  background-position: -24px  -432px;
+}
+
+.sloth-orange {
+  background-position: -48px  -432px;
+}
+
+.sloth-yellow {
+  background-position: -72px  -432px;
+}
+
+.sloth-green {
+  background-position: -96px  -432px;
+}
+
+.sloth-blue {
+  background-position: -120px  -432px;
+}
+
+.sloth-purple {
+  background-position: -144px  -432px;
+}
+
+.sloth-pink {
+  background-position: -168px  -432px;
+}
+
+.squirrel-white {
+  background-position: 0px  -456px;
+}
+
+.squirrel-red {
+  background-position: -24px  -456px;
+}
+
+.squirrel-orange {
+  background-position: -48px  -456px;
+}
+
+.squirrel-yellow {
+  background-position: -72px  -456px;
+}
+
+.squirrel-green {
+  background-position: -96px  -456px;
+}
+
+.squirrel-blue {
+  background-position: -120px  -456px;
+}
+
+.squirrel-purple {
+  background-position: -144px  -456px;
+}
+
+.squirrel-pink {
+  background-position: -168px  -456px;
+}
+
 .owl-carousel {
   display: none;
   position: relative;
