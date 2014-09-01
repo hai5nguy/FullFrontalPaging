@@ -4,25 +4,23 @@ Chats = new Meteor.Collection("chats");
 
 
 if (Meteor.isClient) {
-  Meteor.subscribe("allChats");
+  Meteor.subscribe("allChats", {
+    onReady: function() {
+      console.log("ready");
+      scrollToBottom();
+    }
+  });
 
   Template.chats.chats = function () {
     return Chats.find();
   }
 
   Chats.find().observe({
-    added: function(a,b,c) {
+    added: function() {
       //console.log("added");
-      //console.log("a: " + JSON.stringify(a));
-      //console.log("b: " + b);
-      //console.log("c: " + c);
+      Session.set("atBottomOfChatWindow", isAtBottomOfChatWindow());
 
-      if (isAtBottomOfChatWindow()) {
-        console.log("bottom");
-        scrollToBottom();
-      }
 
-      //console.log(isAtBottomOfChatWindow());
     }
   });
 
@@ -40,30 +38,24 @@ if (Meteor.isClient) {
   }
 
   function scrollToBottom() {
-      console.log("yo");
-      setTimeout(function() {
-
-
-      $('#chatlog')[0].scrollTop = $('#chatlog')[0].scrollHeight;
-      }, 5000);
-
+    // console.log("scrolling");
+    $('#chatlog')[0].scrollTop = $('#chatlog')[0].scrollHeight;
   }
-  /*
+
   Template.chats.rendered = function() {
-   if(!this._rendered) {
-      this._rendered = true;
-      alert('Template onLoad');
+    // console.log("chats rendered");
+    scrollToBottom();
+  }
+
+  Template.chatmessage.rendered = function() {
+    // console.log("rendered");
+    if (Session.get("atBottomOfChatWindow")) {
+      // console.log("renedreed at bottom");
+      scrollToBottom();
     }
-
-  }
-  */
-  Template.chats.doneLoadingChats = function() {
-    Meteor.defer(function() {
-
-    });
-
   }
 
+  //5941 Westbury North Dr, Apt D
   Template.image.url = function() {
     return Session.get("currentImageUrl")
   }
@@ -71,6 +63,7 @@ if (Meteor.isClient) {
   Template.chatinput.events({
     'keydown textarea#write' : function(event) {
       if (event.which == 13) {
+        scrollToBottom();
         var write = $(event.currentTarget);
         var message = write.val();
         processNewChatMessage(message);
@@ -82,12 +75,31 @@ if (Meteor.isClient) {
 
   Template.chatsubmit.events({
     'click input#send': function(event) {
+      scrollToBottom();
       var write = $(event.currentTarget).closest("form").find('#write');
       var message = write.val();
       processNewChatMessage(message);
       write.val('')
       event.preventDefault();
     }
+  });
+
+  UI.registerHelper("formatTimestamp", function(isoDateTime) {
+    var d = new Date(isoDateTime);
+    var hh = d.getHours();
+    var m = d.getMinutes();
+    var dd = "AM";
+    var h = hh;
+    if (h >= 12) {
+        h = hh-12;
+        dd = "PM";
+    }
+    if (h == 0) {
+        h = 12;
+    }
+    m = m<10?"0"+m:m;
+
+    return h + ":" + m + " " + dd;
   });
 
   UI.registerHelper("embedUrl", function(text) {
@@ -100,7 +112,7 @@ if (Meteor.isClient) {
   });
 
   function processNewChatMessage(message) {
-    Chats.insert({ message: message });
+    Meteor.call("insertChat", message);
 
     var imageUrl = findImageUrl(message);
     if (imageUrl) {
@@ -130,11 +142,6 @@ if (Meteor.isClient) {
     //Toggles image size between tall and wide view onclick
     $( "#imagecontainer" ).click(function() {
       $( this ).toggleClass( "wide" );
-    });
-
-    //Shows bottom of chatlog on page load.
-    $(document).ready( function chatBottom() {
-      $('#chatlog')[0].scrollTop = $('#chatlog')[0].scrollHeight;
     });
 
     //Dragbar resizes chat from http://jsfiddle.net/gaby/Bek9L
