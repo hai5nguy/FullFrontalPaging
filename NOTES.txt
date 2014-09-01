@@ -3,12 +3,10 @@
 * Correct Anchor tags
 * all image urls in chat are links
 * detect if user sends 10 messages in under 15 seconds and disable their chat for 60 sec
-* on page load show latest linked image
-* only show 50 comments
 * re-do markup to use JS for image resize and chatlog width/drag
 
 #Long Term Goals
-
+s
 * imgur api for albums
 * embed and auto play youtube/vimeo
 * detect imgur links that don't end in filetype and pull the image from the page

@@ -3,6 +3,10 @@ Meteor.publish("allChats", function() {
 	return Chats.find();
 });
 
+Meteor.publish("allAppSettings", function() {
+	return AppSettings.find();
+});
+
 Meteor.methods({
 	insertChat : function(chatMessage) {
 		var totalNumberOfChats = Chats.find().count();
@@ -16,4 +20,15 @@ Meteor.methods({
 
 		Chats.insert({ message: chatMessage, timestamp: new Date() });
 	}
+});
+
+
+Meteor.startup(function() {
+
+	Meteor._debug(AppSettings.findOne({ name: "lastestImageUrl" }));
+
+	if (!AppSettings.findOne({ name: "lastestImageUrl" })) {
+		AppSettings.insert( { name: "lastestImageUrl", value: "http://placehold.it/800x600" } );
+	}
+	
 });

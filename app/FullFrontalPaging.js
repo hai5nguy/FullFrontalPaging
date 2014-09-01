@@ -1,7 +1,8 @@
 var IMAGE_URL_REGEX = /https?:\/\/\S+\.(jpe?g|gif|png)/i;
 
-Chats = new Meteor.Collection("chats");
+AppSettings = new Meteor.Collection("appsettings");
 
+Chats = new Meteor.Collection("chats");
 
 if (Meteor.isClient) {
   Meteor.subscribe("allChats", {
@@ -10,6 +11,8 @@ if (Meteor.isClient) {
       scrollToBottom();
     }
   });
+
+  Meteor.subscribe("allAppSettings");
 
   Template.chats.chats = function () {
     return Chats.find();
@@ -56,8 +59,7 @@ if (Meteor.isClient) {
   }
 
   Template.image.url = function() {
-    console.log(Session.get("currentImageUrl"));
-    return Session.get("currentImageUrl")
+    return AppSettings.findOne({ name: "lastestImageUrl" }).value;
   }
 
   Template.chatinput.events({
@@ -120,7 +122,10 @@ if (Meteor.isClient) {
 
     var imageUrl = findImageUrl(message);
     if (imageUrl) {
-      Session.set("currentImageUrl", imageUrl);
+      // Session.set("currentImageUrl", imageUrl);
+      var lastestImageUrl = AppSettings.findOne({ name: "lastestImageUrl" });
+
+      AppSettings.update({ _id: lastestImageUrl._id }, { name: "lastestImageUrl", value: imageUrl });
     }
   }
 
@@ -141,7 +146,10 @@ if (Meteor.isClient) {
 
   ///////////////////////////
 
+
   Meteor.startup(function() {
+
+    console.log("appsetting: " );
 
     //Toggles image size between tall and wide view onclick
     $( "#imagecontainer" ).click(function() {
