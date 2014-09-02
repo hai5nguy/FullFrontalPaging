@@ -1061,6 +1061,646 @@ form {
   background-position: -168px  -456px;
 }
 
+.beaver-white {
+  background-position: 0px  -480px;
+}
+
+.beaver-red {
+  background-position: -24px  -480px;
+}
+
+.beaver-orange {
+  background-position: -48px  -480px;
+}
+
+.beaver-yellow {
+  background-position: -72px  -480px;
+}
+
+.beaver-green {
+  background-position: -96px  -480px;
+}
+
+.beaver-blue {
+  background-position: -120px  -480px;
+}
+
+.beaver-purple {
+  background-position: -144px  -480px;
+}
+
+.beaver-pink {
+  background-position: -168px  -480px;
+}
+
+.butterfly-white {
+  background-position: 0px  -504px;
+}
+
+.butterfly-red {
+  background-position: -24px  -504px;
+}
+
+.butterfly-orange {
+  background-position: -48px  -504px;
+}
+
+.butterfly-yellow {
+  background-position: -72px  -504px;
+}
+
+.butterfly-green {
+  background-position: -96px  -504px;
+}
+
+.butterfly-blue {
+  background-position: -120px  -504px;
+}
+
+.butterfly-purple {
+  background-position: -144px  -504px;
+}
+
+.butterfly-pink {
+  background-position: -168px  -504px;
+}
+
+.chicken-white {
+  background-position: 0px  -528px;
+}
+
+.chicken-red {
+  background-position: -24px  -528px;
+}
+
+.chicken-orange {
+  background-position: -48px  -528px;
+}
+
+.chicken-yellow {
+  background-position: -72px  -528px;
+}
+
+.chicken-green {
+  background-position: -96px  -528px;
+}
+
+.chicken-blue {
+  background-position: -120px  -528px;
+}
+
+.chicken-purple {
+  background-position: -144px  -528px;
+}
+
+.chicken-pink {
+  background-position: -168px  -528px;
+}
+
+.deer-white {
+  background-position: 0px  -552px;
+}
+
+.deer-red {
+  background-position: -24px  -552px;
+}
+
+.deer-orange {
+  background-position: -48px  -552px;
+}
+
+.deer-yellow {
+  background-position: -72px  -552px;
+}
+
+.deer-green {
+  background-position: -96px  -552px;
+}
+
+.deer-blue {
+  background-position: -120px  -552px;
+}
+
+.deer-purple {
+  background-position: -144px  -552px;
+}
+
+.deer-pink {
+  background-position: -168px  -552px;
+}
+
+.donkey-white {
+  background-position: 0px  -576px;
+}
+
+.donkey-red {
+  background-position: -24px  -576px;
+}
+
+.donkey-orange {
+  background-position: -48px  -576px;
+}
+
+.donkey-yellow {
+  background-position: -72px  -576px;
+}
+
+.donkey-green {
+  background-position: -96px  -576px;
+}
+
+.donkey-blue {
+  background-position: -120px  -576px;
+}
+
+.donkey-purple {
+  background-position: -144px  -576px;
+}
+
+.donkey-pink {
+  background-position: -168px  -576px;
+}
+
+.eagle-white {
+  background-position: 0px  -600px;
+}
+
+.eagle-red {
+  background-position: -24px  -600px;
+}
+
+.eagle-orange {
+  background-position: -48px  -600px;
+}
+
+.eagle-yellow {
+  background-position: -72px  -600px;
+}
+
+.eagle-green {
+  background-position: -96px  -600px;
+}
+
+.eagle-blue {
+  background-position: -120px  -600px;
+}
+
+.eagle-purple {
+  background-position: -144px  -600px;
+}
+
+.eagle-pink {
+  background-position: -168px  -600px;
+}
+
+.frog-white {
+  background-position: 0px  -624px;
+}
+
+.frog-red {
+  background-position: -24px  -624px;
+}
+
+.frog-orange {
+  background-position: -48px  -624px;
+}
+
+.frog-yellow {
+  background-position: -72px  -624px;
+}
+
+.frog-green {
+  background-position: -96px  -624px;
+}
+
+.frog-blue {
+  background-position: -120px  -624px;
+}
+
+.frog-purple {
+  background-position: -144px  -624px;
+}
+
+.frog-pink {
+  background-position: -168px  -624px;
+}
+
+.giraffe-white {
+  background-position: 0px  -648px;
+}
+
+.giraffe-red {
+  background-position: -24px  -648px;
+}
+
+.giraffe-orange {
+  background-position: -48px  -648px;
+}
+
+.giraffe-yellow {
+  background-position: -72px  -648px;
+}
+
+.giraffe-green {
+  background-position: -96px  -648px;
+}
+
+.giraffe-blue {
+  background-position: -120px  -648px;
+}
+
+.giraffe-purple {
+  background-position: -144px  -648px;
+}
+
+.giraffe-pink {
+  background-position: -168px  -648px;
+}
+
+.killerwhale-white {
+  background-position: 0px  -672px;
+}
+
+.killerwhale-red {
+  background-position: -24px  -672px;
+}
+
+.killerwhale-orange {
+  background-position: -48px  -672px;
+}
+
+.killerwhale-yellow {
+  background-position: -72px  -672px;
+}
+
+.killerwhale-green {
+  background-position: -96px  -672px;
+}
+
+.killerwhale-blue {
+  background-position: -120px  -672px;
+}
+
+.killerwhale-purple {
+  background-position: -144px  -672px;
+}
+
+.killerwhale-pink {
+  background-position: -168px  -672px;
+}
+
+.ladybug-white {
+  background-position: 0px  -696px;
+}
+
+.ladybug-red {
+  background-position: -24px  -696px;
+}
+
+.ladybug-orange {
+  background-position: -48px  -696px;
+}
+
+.ladybug-yellow {
+  background-position: -72px  -696px;
+}
+
+.ladybug-green {
+  background-position: -96px  -696px;
+}
+
+.ladybug-blue {
+  background-position: -120px  -696px;
+}
+
+.ladybug-purple {
+  background-position: -144px  -696px;
+}
+
+.ladybug-pink {
+  background-position: -168px  -696px;
+}
+
+.lion-white {
+  background-position: 0px  -720px;
+}
+
+.lion-red {
+  background-position: -24px  -720px;
+}
+
+.lion-orange {
+  background-position: -48px  -720px;
+}
+
+.lion-yellow {
+  background-position: -72px  -720px;
+}
+
+.lion-green {
+  background-position: -96px  -720px;
+}
+
+.lion-blue {
+  background-position: -120px  -720px;
+}
+
+.lion-purple {
+  background-position: -144px  -720px;
+}
+
+.lion-pink {
+  background-position: -168px  -720px;
+}
+
+.lobster-white {
+  background-position: 0px  -744px;
+}
+
+.lobster-red {
+  background-position: -24px  -744px;
+}
+
+.lobster-orange {
+  background-position: -48px  -744px;
+}
+
+.lobster-yellow {
+  background-position: -72px  -744px;
+}
+
+.lobster-green {
+  background-position: -96px  -744px;
+}
+
+.lobster-blue {
+  background-position: -120px  -744px;
+}
+
+.lobster-purple {
+  background-position: -144px  -744px;
+}
+
+.lobster-pink {
+  background-position: -168px  -744px;
+}
+
+.moose-white {
+  background-position: 0px  -768px;
+}
+
+.moose-red {
+  background-position: -24px  -768px;
+}
+
+.moose-orange {
+  background-position: -48px  -768px;
+}
+
+.moose-yellow {
+  background-position: -72px  -768px;
+}
+
+.moose-green {
+  background-position: -96px  -768px;
+}
+
+.moose-blue {
+  background-position: -120px  -768px;
+}
+
+.moose-purple {
+  background-position: -144px  -768px;
+}
+
+.moose-pink {
+  background-position: -168px  -768px;
+}
+
+.mouse-white {
+  background-position: 0px  -792px;
+}
+
+.mouse-red {
+  background-position: -24px  -792px;
+}
+
+.mouse-orange {
+  background-position: -48px  -792px;
+}
+
+.mouse-yellow {
+  background-position: -72px  -792px;
+}
+
+.mouse-green {
+  background-position: -96px  -792px;
+}
+
+.mouse-blue {
+  background-position: -120px  -792px;
+}
+
+.mouse-purple {
+  background-position: -144px  -792px;
+}
+
+.mouse-pink {
+  background-position: -168px  -792px;
+}
+
+.narwhale-white {
+  background-position: 0px  -816px;
+}
+
+.narwhale-red {
+  background-position: -24px  -816px;
+}
+
+.narwhale-orange {
+  background-position: -48px  -816px;
+}
+
+.narwhale-yellow {
+  background-position: -72px  -816px;
+}
+
+.narwhale-green {
+  background-position: -96px  -816px;
+}
+
+.narwhale-blue {
+  background-position: -120px  -816px;
+}
+
+.narwhale-purple {
+  background-position: -144px  -816px;
+}
+
+.narwhale-pink {
+  background-position: -168px  -816px;
+}
+
+.pig-white {
+  background-position: 0px  -840px;
+}
+
+.pig-red {
+  background-position: -24px  -840px;
+}
+
+.pig-orange {
+  background-position: -48px  -840px;
+}
+
+.pig-yellow {
+  background-position: -72px  -840px;
+}
+
+.pig-green {
+  background-position: -96px  -840px;
+}
+
+.pig-blue {
+  background-position: -120px  -840px;
+}
+
+.pig-purple {
+  background-position: -144px  -840px;
+}
+
+.pig-pink {
+  background-position: -168px  -840px;
+}
+
+.seaturtle-white {
+  background-position: 0px  -864px;
+}
+
+.seaturtle-red {
+  background-position: -24px  -864px;
+}
+
+.seaturtle-orange {
+  background-position: -48px  -864px;
+}
+
+.seaturtle-yellow {
+  background-position: -72px  -864px;
+}
+
+.seaturtle-green {
+  background-position: -96px  -864px;
+}
+
+.seaturtle-blue {
+  background-position: -120px  -864px;
+}
+
+.seaturtle-purple {
+  background-position: -144px  -864px;
+}
+
+.seaturtle-pink {
+  background-position: -168px  -864px;
+}
+
+.sheep-white {
+  background-position: 0px  -888px;
+}
+
+.sheep-red {
+  background-position: -24px  -888px;
+}
+
+.sheep-orange {
+  background-position: -48px  -888px;
+}
+
+.sheep-yellow {
+  background-position: -72px  -888px;
+}
+
+.sheep-green {
+  background-position: -96px  -888px;
+}
+
+.sheep-blue {
+  background-position: -120px  -888px;
+}
+
+.sheep-purple {
+  background-position: -144px  -888px;
+}
+
+.sheep-pink {
+  background-position: -168px  -888px;
+}
+
+.triforce-white {
+  background-position: 0px  -912px;
+}
+
+.triforce-red {
+  background-position: -24px  -912px;
+}
+
+.triforce-orange {
+  background-position: -48px  -912px;
+}
+
+.triforce-yellow {
+  background-position: -72px  -912px;
+}
+
+.triforce-green {
+  background-position: -96px  -912px;
+}
+
+.triforce-blue {
+  background-position: -120px  -912px;
+}
+
+.triforce-purple {
+  background-position: -144px  -912px;
+}
+
+.triforce-pink {
+  background-position: -168px  -912px;
+}
+
+.unicorn-white {
+  background-position: 0px  -936px;
+}
+
+.unicorn-red {
+  background-position: -24px  -936px;
+}
+
+.unicorn-orange {
+  background-position: -48px  -936px;
+}
+
+.unicorn-yellow {
+  background-position: -72px  -936px;
+}
+
+.unicorn-green {
+  background-position: -96px  -936px;
+}
+
+.unicorn-blue {
+  background-position: -120px  -936px;
+}
+
+.unicorn-purple {
+  background-position: -144px  -936px;
+}
+
+.unicorn-pink {
+  background-position: -168px  -936px;
+}
+
 .owl-carousel {
   display: none;
   position: relative;
