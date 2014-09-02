@@ -1,8 +1,11 @@
 var IMAGE_URL_REGEX = /https?:\/\/\S+\.(jpe?g|gif|png)/i;
 
+
 AppSettings = new Meteor.Collection("appsettings");
 
 Chats = new Meteor.Collection("chats");
+
+
 
 if (Meteor.isClient) {
   Meteor.subscribe("allChats", {
@@ -13,6 +16,12 @@ if (Meteor.isClient) {
   });
 
   Meteor.subscribe("allAppSettings");
+
+  Meteor.subscribe("haitest", "dragon-white", function(a,b,c) {
+    console.log("a: " + a);
+    console.log("b: " + b);
+    console.log("c: " + c);
+  });
 
   Template.chats.chats = function () {
     return Chats.find();
@@ -50,6 +59,9 @@ if (Meteor.isClient) {
     scrollToBottom();
   }
 
+  // Template.chatmessage.usericonclassname = function() {
+  //   return Session.get("userIconClassName");
+  // }
   Template.chatmessage.rendered = function() {
     // console.log("rendered");
     if (Session.get("atBottomOfChatWindow")) {
@@ -118,7 +130,7 @@ if (Meteor.isClient) {
   });
 
   function processNewChatMessage(message) {
-    Meteor.call("insertChat", message);
+    Meteor.call("insertChat", message, Session.get("userIconClassName"));
 
     var imageUrl = findImageUrl(message);
     if (imageUrl) {
@@ -149,7 +161,11 @@ if (Meteor.isClient) {
 
   Meteor.startup(function() {
 
-    console.log("appsetting: " );
+    Meteor.call("getAvailableIconClassName", function(error, className) {
+      if (error) { throw "Unable to get available icon class name." }
+      Session.set("userIconClassName", className)
+    });
+    // console.log("appsetting: " );
 
     //Toggles image size between tall and wide view onclick
     $( "#imagecontainer" ).click(function() {
