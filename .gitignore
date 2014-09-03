@@ -1,3 +1,9 @@
+# mac osx gayness
+.DS_Store
+
+# Webstorm
+.idea
+
 #################
 ## Sass
 #################

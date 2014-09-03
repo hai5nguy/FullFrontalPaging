@@ -1,4 +1,5 @@
 var IMAGE_URL_REGEX = /https?:\/\/\S+\.(jpe?g|gif|png)/i;
+var DEFAULT_IMAGE_URL = "/img/default.png";
 
 // Collections ///////////////////////////////////////////////////////////////////////////////////
 AppSettings = new Meteor.Collection("AppSettings");
@@ -72,7 +73,8 @@ Template.chatmessage.userIconClassName = function() {
   return icon ? icon.className : "";
 }
 Template.image.url = function() {
-  return AppSettings.findOne({ name: "lastestImageUrl" }).value;
+  var url = AppSettings.findOne( { name: "lastestImageUrl" });
+  return url ? url.value : DEFAULT_IMAGE_URL;
 }
 
 
