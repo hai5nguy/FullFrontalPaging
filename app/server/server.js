@@ -8,7 +8,7 @@ Meteor.publish("allAppSettings", function() {
 });
 
 Meteor.publish("userIconReclaimed", function() {
-	
+
 });
 
 Meteor.publish("haitest", function(className) {
@@ -37,7 +37,7 @@ Meteor.methods({
 		// Meteor._debug("rand: " + rand);
 
 		var now = new Date();
-		var unusedIcons = _.filter(allIcons, function(icon) { 
+		var unusedIcons = _.filter(allIcons, function(icon) {
 			// return now - icon.lastUsedDateTime > 43200000;   //milliseconds, 12 hours
 			return now - icon.lastUsedDateTime > 10000;   //milliseconds, 12 hours
 
@@ -74,7 +74,7 @@ Meteor.startup(function() {
 	}
 
 	if (Icons.find().count() === 0) {
-		var animals = ["bat", "bear", "bee", "cat", "cat_eyes", "cat_face", "cat_walk", "cat_wink", "cow", "crow", "dog", "dragon", "duck", "elephant", "kiwi", "octopus", "rabbit", "shark", "sloth", "squirrel"];
+		var animals = ["bat", "bear", "bee", "cat", "cat_eyes", "cat_face", "cat_walk", "cat_wink", "cow", "crow", "dog", "dragon", "duck", "elephant", "kiwi", "octopus", "rabbit", "shark", "sloth", "squirrel", "beaver", "butterfly", "chicken", "deer", "donkey", "eagle", "frog", "giraffe", "killerwhale", "ladybug", "lion", "lobster", "moose", "mouse", "narwhale", "pig", "seaturtle", "sheep", "triforce", "unicorn"];
 		var colors = ["white", "red", "orange", "yellow", "green", "blue", "purple", "pink"];
 
 		for (var a in animals) {
@@ -84,5 +84,5 @@ Meteor.startup(function() {
 		}
 
 	}
-	
+
 });
