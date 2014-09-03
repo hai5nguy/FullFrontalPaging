@@ -1,7 +1,7 @@
 $(function() {
-  //Toggles image size between tall and wide view onclick
+  //Toggles image size between tall and tall view onclick
   $( "#imagecontainer" ).click(function() {
-    $( this ).toggleClass( "wide" );
+    $( this ).toggleClass( "tall" );
   });
 
   //Dragbar resizes chat from http://jsfiddle.net/gaby/Bek9L
