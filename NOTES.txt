@@ -1,7 +1,6 @@
 #NEED TO DO
 
-* Correct Anchor tags
-* all image urls in chat are links
+* Correct Anchor tag
 * detect if user sends 10 messages in under 15 seconds and disable their chat for 60 sec
 * re-do markup to use JS for image resize and chatlog width/drag
 * Make an info bar and about page to explain privacy
