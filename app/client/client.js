@@ -31,13 +31,16 @@ Chats.find().observe({
 
 UserIcon.find().observeChanges({
   added: function(id, fields) {
-    // console.log("userIcon added id: " + id + " fields: " + JSON.stringify(fields));
+    var currentUserIcon = UserIcon.findOne( { usedByUserGuid: Session.get("userGuid") } );
+    if (currentUserIcon) {
+      Session.set("currentUserIconClassName", currentUserIcon.className)
+    }
   },
   // changed: function(id, fields) {
   //   console.log("usericon changed id: " + id + " fields: " + JSON.stringify(fields));
   // },
   removed: function(id) {
-    // console.log("userIcon removed id: " + id);
+    Session.set("currentUserIconClassName", "");
   }
 
 });
@@ -81,6 +84,11 @@ Template.chatmessage.rendered = function() {
 Template.image.url = function() {
   var url = AppSettings.findOne( { name: "lastestImageUrl" });
   return url ? url.value : DEFAULT_IMAGE_URL;
+}
+Template.infobar.currentUserIconClassName = function() {
+  var userIcon = UserIcon.find().fetch();
+  // console.log("userIcon", userIcon);
+  return userIcon.length > 0 ? userIcon[0].className : "";
 }
 
 
