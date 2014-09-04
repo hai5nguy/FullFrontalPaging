@@ -64,6 +64,10 @@ function selectIconForUser(userGuid, callback) {
 // Startup ////////////////////////////////////////////////////////////////////////////////////////////////////////
 Meteor.startup(function() {
 
+	if (!AppSettings.findOne({ name: "lastestImageUrl" })) {
+		AppSettings.insert( { name: "lastestImageUrl", value: "/img/default.png" } );
+	}
+
 	if (UserIcons.find().count() === 0) {
 		var animals = ["bat", "bear", "bee", "cat", "cat_eyes", "cat_face", "cat_walk", "cat_wink", "cow", "crow", "dog", "dragon", "duck", "elephant", "kiwi", "octopus", "rabbit", "shark", "sloth", "squirrel", "beaver", "butterfly", "chicken", "deer", "donkey", "eagle", "frog", "giraffe", "killerwhale", "ladybug", "lion", "lobster", "moose", "mouse", "narwhale", "pig", "seaturtle", "sheep", "triforce", "unicorn"];
 		// var animals = ["bat", "bear", "bee"]
