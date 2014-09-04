@@ -54,6 +54,51 @@ form
     padding: 0px
     cursor: col-resize
 
+#infobar
+    background-color: #333
+
+#reroll
+    &:hover
+        cursor: hand
+
+#currentlyOnline
+    font-weight: bold
+
+#aboutLink
+    &:hover
+        cursor: hand
+#aboutModal
+    display: block
+    background-color: rgba(0,0,0,0.9)
+    position: absolute
+    top: 40px
+    right: 21px
+    width: 350px
+    height: 70%
+    padding: 15px
+    border-radius: 10px
+    text-align: right
+    .modalClose
+        font-weight: bold
+        &:hover
+            font-color: #F00
+
+#aboutModalInner
+    display: block
+    overflow: auto
+    height: 95%
+    text-align: left
+    h1
+        text-align: center
+    p
+        line-height: 1.1em
+        margin-top: 10px
+    q
+        font-style: italic
+        font-weight: bold
+        display: block
+        padding: 10px
+
 #chat
     min-width: 350px
     height: 100%
