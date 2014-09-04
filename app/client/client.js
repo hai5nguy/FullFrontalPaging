@@ -141,7 +141,7 @@ function processNewChatMessage(message) {
 }
 
 function surroundWithAnchor(text, url) {
-  return text.replace(url, "<a href='" + url + "' target='_blank'>" + url + "</a>");
+  return text.replace(url, "<a href='" + url + "' target='_blank'>image</a>");
 }
 
 function findImageUrl(text) {
