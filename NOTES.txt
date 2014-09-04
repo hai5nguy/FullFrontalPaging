@@ -1,6 +1,5 @@
 #NEED TO DO
 
-* Show bottom of chat on load
 * Correct Anchor tags
 * all image urls in chat are links
 * detect if user sends 10 messages in under 15 seconds and disable their chat for 60 sec
