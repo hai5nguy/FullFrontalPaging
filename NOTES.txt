@@ -1,4 +1,4 @@
-#Full Frontal Paging To Do list
+#NEED TO DO
 
 * Show bottom of chat on load
 * Correct Anchor tags
@@ -8,9 +8,9 @@
 * Make an info bar and about page to explain privacy
 * Change image urls to be <a href="http://33.media.tumblr.com/1eb50966067d35cfffa61aa6a162e1e8/tumblr_navr8bZnjK1tixdy7o1_1280.jpg">Tumblr Image</a> or <a href="http://i.imgur.com/GtxhJh0.gif">Imgur Image</a> or <a href="https://anydomain.com/file.jpg">Anydomain Image</a>. And eventually we'll want to detect specifically youtube and vimeo links and say YouTube Video or Vimeo Video.
 
-#Long Term Goals
+#WANT TO DO
 
-* imgur api for albums
+* imgur api for albums http://jsfiddle.net/vy1kfqdv/
 * embed and auto play youtube/vimeo
 * detect imgur links that don't end in filetype and pull the image from the page
-*
+* unique url chatrooms
