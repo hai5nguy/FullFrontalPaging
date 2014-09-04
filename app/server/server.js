@@ -42,6 +42,11 @@ Meteor.methods({
 		function doInsert(timestamp, message, className) {
 			Chats.insert({ timestamp: timestamp, message: message, userIconClassName: className });
 		}
+	},
+	rerollUserIcon : function(userGuid) {
+		unselectUserIcon(userGuid, function() {
+			selectIconForUser(userGuid);
+		});
 	}
 });
 
@@ -57,6 +62,19 @@ function selectIconForUser(userGuid, callback) {
 	UserIcons.update({ _id: selectedIcon._id }, { $set: { usedByUserGuid: userGuid, lastUsedDateTime: new Date() } }, {}, function() {
 		if (typeof callback === "function") {
 			callback(selectedIcon.className);
+		}
+	});
+}
+
+function unselectUserIcon(userGuid, callback) {
+	if (!userGuid) {
+		Meteor._debug("userGuid has to be set for unselectUserIcon");
+		throw "userGuid has to be set for unselectUserIcon";
+	}
+
+	UserIcons.update({ usedByUserGuid: userGuid }, { $set: { usedByUserGuid: null } }, { multi: true }, function() {
+		if (typeof callback === 'function') {
+			callback();
 		}
 	});
 }

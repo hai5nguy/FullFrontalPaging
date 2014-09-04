@@ -91,7 +91,7 @@ Template.infobar.currentUserIconClassName = function() {
   return userIcon.length > 0 ? userIcon[0].className : "";
 }
 
-
+// Template events //////////////////////////////////////////////////////////////////////////////////////
 Template.chatinput.events({
   'keydown textarea#write' : function(event) {
     if (event.which == 13) {
@@ -117,6 +117,12 @@ Template.chatsubmit.events({
       write.val('')
     }
     event.preventDefault();
+  }
+});
+
+Template.infobar.events({
+  'click #reroll': function(event) {
+    Meteor.call("rerollUserIcon", Session.get("userGuid"));  
   }
 });
 
