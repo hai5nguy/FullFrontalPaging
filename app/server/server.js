@@ -69,7 +69,7 @@ Meteor.startup(function() {
 	}
 
 	if (UserIcons.find().count() === 0) {
-		var animals = ["bat", "bear", "bee", "cat", "cat_eyes", "cat_face", "cat_walk", "cat_wink", "cow", "crow", "dog", "dragon", "duck", "elephant", "kiwi", "octopus", "rabbit", "shark", "sloth", "squirrel", "beaver", "butterfly", "chicken", "deer", "donkey", "eagle", "frog", "giraffe", "killerwhale", "ladybug", "lion", "lobster", "moose", "mouse", "narwhale", "pig", "seaturtle", "sheep", "triforce", "unicorn"];
+		var animals = ["bear", "bee", "cat", "cat_eyes", "cat_face", "cat_walk", "cat_wink", "cow", "crow", "dog", "dragon", "duck", "elephant", "kiwi", "octopus", "rabbit", "shark", "sloth", "squirrel", "beaver", "butterfly", "chicken", "deer", "donkey", "eagle", "frog", "giraffe", "killerwhale", "ladybug", "lion", "lobster", "moose", "mouse", "narwhale", "pig", "seaturtle", "sheep", "specials", "unicorn", "bat"];
 		// var animals = ["bat", "bear", "bee"]
 		var colors = ["white", "red", "orange", "yellow", "green", "blue", "purple", "pink"];
 		// var colors = ["white", "red"];

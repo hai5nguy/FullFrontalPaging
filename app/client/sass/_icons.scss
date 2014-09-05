@@ -10,14 +10,14 @@
     width: 24px;
 }
 
-.bat-white          { background-position:    0px     0px; }
-.bat-red            { background-position:  -24px     0px; }
-.bat-orange         { background-position:  -48px     0px; }
-.bat-yellow         { background-position:  -72px     0px; }
-.bat-green          { background-position:  -96px     0px; }
-.bat-blue           { background-position: -120px     0px; }
-.bat-purple         { background-position: -144px     0px; }
-.bat-pink           { background-position: -168px     0px; }
+.blank              { background-position:    0px     0px; }
+.no-sign            { background-position:  -24px     0px; }
+.tbd1               { background-position:  -48px     0px; }
+.tbd2               { background-position:  -72px     0px; }
+.tbd3               { background-position:  -96px     0px; }
+.tbd4               { background-position: -120px     0px; }
+.tbd5               { background-position: -144px     0px; }
+.tbd6               { background-position: -168px     0px; }
 
 .bear-white         { background-position:    0px   -24px; }
 .bear-red           { background-position:  -24px   -24px; }
@@ -352,14 +352,14 @@
 .sheep-purple       { background-position: -144px  -888px; }
 .sheep-pink         { background-position: -168px  -888px; }
 
-.triforce-white     { background-position:    0px  -912px; }
-.triforce-red       { background-position:  -24px  -912px; }
-.triforce-orange    { background-position:  -48px  -912px; }
-.triforce-yellow    { background-position:  -72px  -912px; }
-.triforce-green     { background-position:  -96px  -912px; }
-.triforce-blue      { background-position: -120px  -912px; }
-.triforce-purple    { background-position: -144px  -912px; }
-.triforce-pink      { background-position: -168px  -912px; }
+.specials-white     { background-position:    0px  -912px; }
+.specials-red       { background-position:  -24px  -912px; }
+.specials-orange    { background-position:  -48px  -912px; }
+.specials-yellow    { background-position:  -72px  -912px; }
+.specials-green     { background-position:  -96px  -912px; }
+.specials-blue      { background-position: -120px  -912px; }
+.specials-purple    { background-position: -144px  -912px; }
+.specials-pink      { background-position: -168px  -912px; }
 
 .unicorn-white      { background-position:    0px  -936px; }
 .unicorn-red        { background-position:  -24px  -936px; }
@@ -369,3 +369,12 @@
 .unicorn-blue       { background-position: -120px  -936px; }
 .unicorn-purple     { background-position: -144px  -936px; }
 .unicorn-pink       { background-position: -168px  -936px; }
+
+.bat-white          { background-position:    0px  -960px; }
+.bat-red            { background-position:  -24px  -960px; }
+.bat-orange         { background-position:  -48px  -960px; }
+.bat-yellow         { background-position:  -72px  -960px; }
+.bat-green          { background-position:  -96px  -960px; }
+.bat-blue           { background-position: -120px  -960px; }
+.bat-purple         { background-position: -144px  -960px; }
+.bat-pink           { background-position: -168px  -960px; }
