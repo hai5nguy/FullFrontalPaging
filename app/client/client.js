@@ -5,14 +5,28 @@ Session.set("userGuid", Meteor.uuid())
 
 // Startup ///////////////////////////////////////////////////////////////////////////////////////////////
 Meteor.startup(function() {
+  Meteor.setInterval(function() {
+    Meteor.call("keepAlive", Session.get("userGuid"));
+  }, 15000);
 });
 
 // Collections ///////////////////////////////////////////////////////////////////////////////////
 AppSettings = new Meteor.Collection("appsettings");
 Chats = new Meteor.Collection("chats");
 UserIcon = new Meteor.Collection("usericons");
+UserStatus = new Meteor.Collection("userstatus");
+
 
 Meteor.subscribe("allAppSettings");
+/*
+AppSettings.find().observe({
+  changed: function(oldDoc, newDoc) {
+    if (newDoc.numberOfActiveUser) {
+      Session.set("")
+    }
+  }
+});
+*/
 
 Meteor.subscribe("allChats", {
   onReady: function() {
@@ -29,21 +43,21 @@ Chats.find().observe({
   }
 });
 
-UserIcon.find().observeChanges({
-  added: function(id, fields) {
-    var currentUserIcon = UserIcon.findOne( { usedByUserGuid: Session.get("userGuid") } );
-    if (currentUserIcon) {
-      Session.set("currentUserIconClassName", currentUserIcon.className)
-    }
-  },
+// UserIcon.find().observeChanges({
+  // added: function(id, fields) {
+    // var currentUserIcon = UserIcon.findOne( { usedByUserGuid: Session.get("userGuid") } );
+    // if (currentUserIcon) {
+    //   Session.set("currentUserIconClassName", currentUserIcon.className)
+    // }
+  // },
   // changed: function(id, fields) {
   //   console.log("usericon changed id: " + id + " fields: " + JSON.stringify(fields));
   // },
-  removed: function(id) {
-    Session.set("currentUserIconClassName", "");
-  }
+  // removed: function(id) {
+    // Session.set("currentUserIconClassName", "");
+  // }
 
-});
+// });
 
 // Helper Functions - must be first for some reason ///////////////////////////////////////////////
 
@@ -89,6 +103,10 @@ Template.infobar.currentUserIconClassName = function() {
   var userIcon = UserIcon.find().fetch();
   // console.log("userIcon", userIcon);
   return userIcon.length > 0 ? userIcon[0].className : "";
+}
+Template.infobar.usersCurrentlyOnline = function() {
+  var usersCurrentlyOnline = AppSettings.findOne( {name: 'usersCurrentlyOnline' } );
+  return usersCurrentlyOnline ? usersCurrentlyOnline.value : "?";
 }
 
 // Template events //////////////////////////////////////////////////////////////////////////////////////
