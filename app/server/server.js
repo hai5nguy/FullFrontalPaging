@@ -58,6 +58,8 @@ Meteor.methods({
 	},
 	keepAlive: function(userGuid) {
 		UserStatus.upsert({ userGuid: userGuid }, { $set: { keepAliveDateTime: new Date() }} );
+		AppSettings.upsert( { name: 'usersCurrentlyOnline' }, { $set: { value: UserStatus.find().count() }});
+		
 		// AppSettings.update
 	}
 });

@@ -5,6 +5,7 @@ Session.set("userGuid", Meteor.uuid())
 
 // Startup ///////////////////////////////////////////////////////////////////////////////////////////////
 Meteor.startup(function() {
+  Meteor.call("keepAlive", Session.get("userGuid"));
   Meteor.setInterval(function() {
     Meteor.call("keepAlive", Session.get("userGuid"));
   }, 15000);
