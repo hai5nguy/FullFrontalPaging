@@ -2,6 +2,7 @@
 AppSettings = new Meteor.Collection("appsettings");
 Chats = new Meteor.Collection("chats");
 UserIcons = new Meteor.Collection("usericons");
+UserStatus = new Meteor.Collection("userstatus");
 
 Meteor.publish("allChats", function() {
 	return Chats.find({}, { fields: {timestamp: 1, message: 1, userIconClassName: 1 } } );
@@ -17,6 +18,12 @@ Meteor.publish("userIcon", function(userGuid) {
 		selectIconForUser(userGuid);
 	}
 	return UserIcons.find( { usedByUserGuid: userGuid }, { fields: { className: 1 }});
+});
+
+UserStatus.find().observe({
+	removed : function(removedDocument) {
+		unselectUserIcon(removedDocument.userGuid);
+	}
 });
 
 // Methods /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -42,6 +49,18 @@ Meteor.methods({
 		function doInsert(timestamp, message, className) {
 			Chats.insert({ timestamp: timestamp, message: message, userIconClassName: className });
 		}
+
+	},
+	rerollUserIcon : function(userGuid) {
+		unselectUserIcon(userGuid, function() {
+			selectIconForUser(userGuid);
+		});
+	},
+	keepAlive: function(userGuid) {
+		UserStatus.upsert({ userGuid: userGuid }, { $set: { keepAliveDateTime: new Date() }} );
+		AppSettings.upsert( { name: 'usersCurrentlyOnline' }, { $set: { value: UserStatus.find().count() }});
+		
+		// AppSettings.update
 	}
 });
 
@@ -61,16 +80,25 @@ function selectIconForUser(userGuid, callback) {
 	});
 }
 
-// Startup ////////////////////////////////////////////////////////////////////////////////////////////////////////
-Meteor.startup(function() {
-
-	if (!AppSettings.findOne({ name: "lastestImageUrl" })) {
-		AppSettings.insert( { name: "lastestImageUrl", value: "/img/default.png" } );
+function unselectUserIcon(userGuid, callback) {
+	if (!userGuid) {
+		Meteor._debug("userGuid has to be set for unselectUserIcon");
+		throw "userGuid has to be set for unselectUserIcon";
 	}
 
+	UserIcons.update({ usedByUserGuid: userGuid }, { $set: { usedByUserGuid: null } }, { multi: true }, function() {
+		if (typeof callback === 'function') {
+			callback();
+		}
+	});
+}
+
+function initializeUserIconsDatabase() {
 	if (UserIcons.find().count() === 0) {
+
 		var animals = ["bear", "bee", "cat", "cat_eyes", "cat_face", "cat_walk", "cat_wink", "cow", "crow", "dog", "dragon", "duck", "elephant", "kiwi", "octopus", "rabbit", "shark", "sloth", "squirrel", "beaver", "butterfly", "chicken", "deer", "donkey", "eagle", "frog", "giraffe", "killerwhale", "ladybug", "lion", "lobster", "moose", "mouse", "narwhale", "pig", "seaturtle", "sheep", "specials", "unicorn", "bat"];
-		// var animals = ["bat", "bear", "bee"]
+		// var animals = ["dragon", "bear"]
+
 		var colors = ["white", "red", "orange", "yellow", "green", "blue", "purple", "pink"];
 		// var colors = ["white", "red"];
 
@@ -81,11 +109,28 @@ Meteor.startup(function() {
 		}
 
 	}
+}
+
+// Startup ////////////////////////////////////////////////////////////////////////////////////////////////////////
+Meteor.startup(function() {
+
+	AppSettings.upsert( { name: 'usersCurrentlyOnline' }, { $set: { value: UserStatus.find().count() }});
+
+	if (!AppSettings.findOne({ name: "lastestImageUrl" })) {
+		AppSettings.insert( { name: "lastestImageUrl", value: "/img/default.png" } );
+	}
+
+	initializeUserIconsDatabase();
 
 	Meteor.setInterval(function() {
-		var twelveHoursAgo = (new Date()).addHours(-12);
-		// var twelveHoursAgo = (new Date()).addSeconds(-12);
+		var twelveHoursAgo = new Date().addHours(-12);
 		UserIcons.update( { lastUsedDateTime: { $lt: twelveHoursAgo } } , { $set: { usedByUserGuid: null } } , {multi: true} );
 	}, 60000);
+
+	Meteor.setInterval(function() {
+		var sixtySecondsAgo = new Date().addSeconds(-60);
+		UserStatus.remove( { keepAliveDateTime: { $lt: sixtySecondsAgo } });
+		AppSettings.upsert( { name: 'usersCurrentlyOnline' }, { $set: { value: UserStatus.find().count() }});
+	}, 15000);
 
 });
